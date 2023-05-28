@@ -5,21 +5,26 @@ int mat[10][10];
 void rotateMatrix(int mat[10][10], int N) {
  	// Your code here
   //  int temp;
-   int mat2[10][10];
-   for(int i=0;i<N;i++)
-   {
-     for(int j=0;j<N;j++)
-     {
-       mat2[i][j]=mat[N-j-1][i];
-     }
-   }
-   for(int i=0;i<N;i++)
-   {
-     for(int j=0;j<N;j++)
-     {
-       mat[i][j]=mat2[i][j];
-     }
-   }
+   for (int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {//transposing the matrix
+            int temp=matrix[i][j];
+            matrix[i][j]=matrix[j][i];
+            matrix[j][i]=temp;
+        }
+    }
+    //Reversing each row 
+    for (int i=0;i<n;i++)
+    {
+        for(int j=0;j<n/2;j++)
+        {
+            int temp=matrix[i][j];
+            matrix[i][j]= matrix[i][n-j-1];
+            matrix[i][n-j-1]=temp;
+        }
+    }
+
      
 }
 
